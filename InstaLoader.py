@@ -1,6 +1,8 @@
-from ast import While
+import banner
 import requests
 import re
+import os
+import sys
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
@@ -18,24 +20,8 @@ def get_response(url):
 def prepare_urls(matches):
     return list({match.replace("\\u0026", "&") for match in matches})
 
-print(Fore.CYAN+'''
-
-───────╔╗───╔╗──────────╔╗
-──────╔╝╚╗──║║──────────║║
-╔╦═╗╔═╩╗╔╬══╣║──╔══╦══╦═╝╠══╦═╗
-╠╣╔╗╣══╣║║╔╗║║─╔╣╔╗║╔╗║╔╗║║═╣╔╝
-║║║║╠══║╚╣╔╗║╚═╝║╚╝║╔╗║╚╝║║═╣║
-╚╩╝╚╩══╩═╩╝╚╩═══╩══╩╝╚╩══╩══╩╝
------------------------------------------------------------------
-                            v2
-                            Author:https://github.com/imraj569
------------------------------------------------------------------
-Just past The instagram post link and Download
-------------------------------------------------------------------                            
-''')
-
 def l(): 
-    url = input(Fore.BLUE+'Enter Instagram URL: ')
+    url = input(Fore.BLUE+'Enter Instagram post URL: ')
     response = get_response(url)
     
     vid_matches = re.findall('"video_url":"([^"]+)"', response)
@@ -53,6 +39,40 @@ def l():
     if not (vid_urls or pic_urls):
         print(Fore.RED+'Could not recognize the media in the provided URL.')
 
-if __name__ == '__main__':
-    while True: 
+def ClearCon():
+    try:
+        command = 'clear'
+        if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+            command = 'cls'
+            os.system(command)
+        else:
+            os.system('clear')
+    except:
+        print('somthing want wrong')
+
+def opt():
+    print(Fore.LIGHTMAGENTA_EX+'Download all types of instagram posts,reels,videos and story etc. ≧◉◡◉≦')
+    print(Fore.LIGHTYELLOW_EX+'''-----------------------
+    1)change banner
+    2)clear screen
+    3)download post
+    4)Exit
+-----------------------
+    ''')
+    query = input('Enter any no you want: ')
+    if '1' in query:
+        ClearCon()
+        banner.ban()
+    elif '2' in query:
+        ClearCon()
+    elif '3' in query:
         l()
+    elif '4' in query:
+        ClearCon()
+        print(Fore.BLUE+"Thanks for using Insta Loader  (•◡•) /")
+        sys.exit()
+
+if __name__ == '__main__':
+    banner.ban()
+    while True: 
+        opt()
