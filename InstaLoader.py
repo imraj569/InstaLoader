@@ -52,13 +52,13 @@ def ClearCon():
 
 def opt():
     print(Fore.LIGHTMAGENTA_EX+'Download all types of instagram posts,reels,videos and story etc. ≧◉◡◉≦')
-    print(Fore.LIGHTYELLOW_EX+'''-----------------------
-    1)change banner
-    2)clear screen
-    3)download post
-    4)Exit
+    print(Fore.LIGHTYELLOW_EX+'''
 -----------------------
-    ''')
+    [1]change banner
+    [2]clear screen
+    [3]download post
+    [4]Exit
+-----------------------''')
     query = input('Enter any no you want: ')
     if '1' in query:
         ClearCon()

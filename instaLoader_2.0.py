@@ -4,7 +4,7 @@ import os
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
-from banner import ban
+from banner_2 import ban
 import sys
 
 def get_response(url):
@@ -21,7 +21,6 @@ def prepare_urls(matches):
     return list({match.replace("\\u0026", "&") for match in matches})
 
 def l():
-    ban()
     url = input(Fore.BLUE+'Enter Instagram post URL: ')
     if 'clear' in url:
         ClearCon()
@@ -61,5 +60,6 @@ def ClearCon():
         print('somthing want wrong')
 
 if __name__ == '__main__':
+    ban()
     while True: 
         l()
