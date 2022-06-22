@@ -41,6 +41,7 @@ def l():
         if os.name in ('nt', 'dos'):
             try:
                 ClearCon()
+                os.system('cd ..')
                 os.system('rm -rf Instaloader')
                 os.system('git clone https://github.com/imraj569/InstaLoader')
                 os.system('clear')
@@ -56,6 +57,7 @@ def l():
                 os.system('pkg install git -y')
                 os.system('pkg install python -y')
                 ClearCon()
+                os.system('cd ..')
                 os.system('rm -rf Instaloader')
                 os.system('git clone https://github.com/imraj569/InstaLoader')
                 os.system('clear')
@@ -67,6 +69,7 @@ def l():
                 os.system('apt install git -y')
                 os.system('apt install python -y')
                 ClearCon()
+                os.system('cd ..')
                 os.system('rm -rf Instaloader')
                 os.system('git clone https://github.com/imraj569/InstaLoader')
                 os.system('clear')
