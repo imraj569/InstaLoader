@@ -4,7 +4,7 @@ import os
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
-from banner_2 import ban
+from banner_2 import ban, bye
 import sys
 
 def get_response(url):
@@ -25,11 +25,28 @@ def l():
     if 'clear' in url:
         ClearCon()
 
-    elif 'exit' in url or 'Exit' in url:
+    elif 'exit' in url or 'bye' in url:
         ClearCon()
+        bye()
         sys.exit()
 
-    else:
+    elif 'banner' in url or 'bn' in url:
+        ClearCon()
+        ban()
+
+    elif 'help' in url or '-h' in url:
+        ClearCon()
+        print(Fore.YELLOW+'''
+     --------------------------------------------------------------- 
+    | [+] for clear your screen type -clear.                        |
+    | [+] for Exit type -exit/Exit.                                 |       
+    | [+] for change banner type - banner/bn.                       |
+    | [+] for help type - help/-h                                   |       
+    | [+] for download instagram reels,images and more past url.    |
+     ---------------------------------------------------------------
+        ''')
+
+    elif 'www.instagram.com' in url:
         print(Fore.YELLOW+'Please wait searching url content...')
         response = get_response(url)
         
@@ -48,6 +65,9 @@ def l():
         if not (vid_urls or pic_urls):
             print(Fore.RED+'Could not recognize the media in the provided URL.')
 
+    else:
+        print(Fore.RED+"sorry this command can't be Executed please type help for more.")
+
 def ClearCon():
     try:
         command = 'clear'
@@ -60,6 +80,7 @@ def ClearCon():
         print('somthing want wrong')
 
 if __name__ == '__main__':
+    ClearCon()
     ban()
     while True: 
         l()
