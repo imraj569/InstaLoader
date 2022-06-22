@@ -1,3 +1,4 @@
+from time import sleep
 import requests
 import re
 import os
@@ -38,7 +39,18 @@ def l():
         ClearCon()
         print(Fore.GREEN+'please wait updating....')
         if os.name in ('nt', 'dos'):
-            print('please install python git manually then git clone InstaLoader')
+            try:
+                ClearCon()
+                os.system('rm -rf Instaloader')
+                os.system('git clone https://github.com/imraj569/InstaLoader')
+                os.system('clear')
+                print(Fore.GREEN+'InstaLoader Updated successfully ✔')
+                sleep(1)
+                ClearCon()
+                ban()
+            except:
+                print(Fore.RED+"can't update please update manually...")
+
         else:
             try:
                 os.system('pkg install git -y')
@@ -47,7 +59,10 @@ def l():
                 os.system('rm -rf Instaloader')
                 os.system('git clone https://github.com/imraj569/InstaLoader')
                 os.system('clear')
-                print('InstaLoader Updated successfully ✔')
+                print(Fore.GREEN+'InstaLoader Updated successfully ✔')
+                sleep(1)
+                ClearCon()
+                ban()
             except:
                 os.system('apt install git -y')
                 os.system('apt install python -y')
@@ -55,7 +70,10 @@ def l():
                 os.system('rm -rf Instaloader')
                 os.system('git clone https://github.com/imraj569/InstaLoader')
                 os.system('clear')
-                print('InstaLoader Updated successfully ✔')
+                print(Fore.GREEN+'InstaLoader Updated successfully ✔')
+                sleep(1)
+                ClearCon()
+                ban()
 
     elif 'help' in url or '-h' in url:
         ClearCon()
