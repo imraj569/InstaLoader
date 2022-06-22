@@ -1,5 +1,9 @@
-# Screenshoot
-![instaloager ban](https://user-images.githubusercontent.com/53007802/160536539-9d2fcd89-0558-4ab4-ab11-1d6597c29faa.jpg)
+# Screenshoot v1
+<img align="center" alt="Coding" width="500" src="https://user-images.githubusercontent.com/53007802/174951737-185c1ae7-bd8d-41b3-9590-e6f750cf328e.jpg">
+
+# Screenshoot v2
+<img align="center" alt="Coding" width="500" src="https://user-images.githubusercontent.com/53007802/174952209-d74dceb5-1ba7-4c79-bc23-2b0eb53ac579.jpg">
+<img align="center" alt="Coding" width="500" src="https://user-images.githubusercontent.com/53007802/174952271-c2ddc2dc-064c-4ac5-9fd0-90ef864195be.jpg">
 
 # About 
 Instaload is a python tool that helps in downloading Instagram posts e.g.- reels, video and images etc without any user log in. people can use this tool for geting results in a easy way with the help of termux app or terminal of your pc. 
@@ -15,7 +19,8 @@ Instaload is a python tool that helps in downloading Instagram posts e.g.- reels
 * `cd InstaLoader`
 * `ls`
 * `pip install -r requirements.txt`
-* `python InstaLoader.py`
+* `for v1 - python InstaLoader.py`
+* `for v2 - python instaLoader_2.py`
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
