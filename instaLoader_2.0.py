@@ -33,6 +33,29 @@ def l():
     elif 'banner' in url or 'bn' in url:
         ClearCon()
         ban()
+    
+    elif 'update' in url:
+        ClearCon()
+        print(Fore.GREEN+'please wait updating....')
+        if os.name in ('nt', 'dos'):
+            print('please install python git manually then git clone InstaLoader')
+        else:
+            try:
+                os.system('pkg install git -y')
+                os.system('pkg install python -y')
+                ClearCon()
+                os.system('rm -rf Instaloader')
+                os.system('git clone https://github.com/imraj569/InstaLoader')
+                os.system('clear')
+                print('InstaLoader Updated successfully ✔')
+            except:
+                os.system('apt install git -y')
+                os.system('apt install python -y')
+                ClearCon()
+                os.system('rm -rf Instaloader')
+                os.system('git clone https://github.com/imraj569/InstaLoader')
+                os.system('clear')
+                print('InstaLoader Updated successfully ✔')
 
     elif 'help' in url or '-h' in url:
         ClearCon()
@@ -41,7 +64,8 @@ def l():
     | [+] for clear your screen type -clear.                        |
     | [+] for Exit type -exit/Exit.                                 |       
     | [+] for change banner type - banner/bn.                       |
-    | [+] for help type - help/-h                                   |       
+    | [+] for help type - help/-h                                   |
+    | [+] for Update Instaloader type - update                      |       
     | [+] for download instagram reels,images and more past url.    |
      ---------------------------------------------------------------
         ''')
