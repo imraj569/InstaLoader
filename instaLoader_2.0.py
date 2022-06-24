@@ -38,45 +38,12 @@ def l():
     elif 'update' in url:
         ClearCon()
         print(Fore.GREEN+'please wait updating....')
-        if os.name in ('nt', 'dos'):
-            try:
-                ClearCon()
-                os.system('cd ..')
-                os.system('rm -rf Instaloader')
-                os.system('git clone https://github.com/imraj569/InstaLoader')
-                os.system('clear')
-                print(Fore.GREEN+'InstaLoader Updated successfully ✔')
-                sleep(1)
-                ClearCon()
-                ban()
-            except:
-                print(Fore.RED+"can't update please update manually...")
-
-        else:
-            try:
-                os.system('pkg install git -y')
-                os.system('pkg install python -y')
-                ClearCon()
-                os.system('cd ..')
-                os.system('rm -rf Instaloader')
-                os.system('git clone https://github.com/imraj569/InstaLoader')
-                os.system('clear')
-                print(Fore.GREEN+'InstaLoader Updated successfully ✔')
-                sleep(1)
-                ClearCon()
-                ban()
-            except:
-                os.system('apt install git -y')
-                os.system('apt install python -y')
-                ClearCon()
-                os.system('cd ..')
-                os.system('rm -rf Instaloader')
-                os.system('git clone https://github.com/imraj569/InstaLoader')
-                os.system('clear')
-                print(Fore.GREEN+'InstaLoader Updated successfully ✔')
-                sleep(1)
-                ClearCon()
-                ban()
+        try:
+            os.system('git clone https://github.com/imraj569/InstaLoader.git')
+            print(Fore.GREEN+'successfully updated ....')
+        except:
+            print('''somthing went wrong please update manualy at
+             : https://github.com/imraj569/InstaLoader.git ''')
 
     elif 'help' in url or '-h' in url:
         ClearCon()
@@ -102,26 +69,11 @@ def l():
         pic_urls = prepare_urls(pic_matches)
 
         if vid_urls:
-            a = (Fore.CYAN+'\nDetected Videos:\n{0}'.format('\n'.join(vid_urls)))
-            chunk_size=256
-            r=requests.get(a,stream=True)
-            with open("reels.mp4","wb") as f:
-                for chunk in r.iter_content(chunk_size=chunk_size):
-                    f.write(chunk)
-                    os.system('mv reels.mp4 /sdcard/Download/')
-                    print(Fore.GREEN+'Video Downloaded successfully...')
+            print(Fore.CYAN+'\nDetected Videos:\n{0}'.format('\n'.join(vid_urls)))
 
         if pic_urls:
-            b = (Fore.LIGHTYELLOW_EX+'\nDetected Pictures:\n{0}'.format('\n'.join(pic_urls)))
-            chunk_size=256
-            r=requests.get(b,stream=True)
-            with open("reels.jpg","wb") as f:
-                for chunk in r.iter_content(chunk_size=chunk_size):
-                    f.write(chunk)
-                    os.system('mv reels.jpg /sdcard/Download/')
-                    print(Fore.GREEN+'cover image Downloaded successfully...')
-
-
+            print(Fore.LIGHTYELLOW_EX+'\nDetected Pictures:\n{0}'.format('\n'.join(pic_urls)))
+           
         if not (vid_urls or pic_urls):
             print(Fore.RED+'Could not recognize the media in the provided URL.')
 
