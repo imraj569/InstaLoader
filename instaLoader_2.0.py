@@ -102,10 +102,25 @@ def l():
         pic_urls = prepare_urls(pic_matches)
 
         if vid_urls:
-            print(Fore.CYAN+'\nDetected Videos:\n{0}'.format('\n'.join(vid_urls)))
+            a = (Fore.CYAN+'\nDetected Videos:\n{0}'.format('\n'.join(vid_urls)))
+            chunk_size=256
+            r=requests.get(a,stream=True)
+            with open("reels.mp4","wb") as f:
+                for chunk in r.iter_content(chunk_size=chunk_size):
+                    f.write(chunk)
+                    os.system('mv reels.mp4 /sdcard/Download/')
+                    print(Fore.GREEN+'Video Downloaded successfully...')
 
         if pic_urls:
-            print(Fore.LIGHTYELLOW_EX+'\nDetected Pictures:\n{0}'.format('\n'.join(pic_urls)))
+            b = (Fore.LIGHTYELLOW_EX+'\nDetected Pictures:\n{0}'.format('\n'.join(pic_urls)))
+            chunk_size=256
+            r=requests.get(b,stream=True)
+            with open("reels.jpg","wb") as f:
+                for chunk in r.iter_content(chunk_size=chunk_size):
+                    f.write(chunk)
+                    os.system('mv reels.jpg /sdcard/Download/')
+                    print(Fore.GREEN+'cover image Downloaded successfully...')
+
 
         if not (vid_urls or pic_urls):
             print(Fore.RED+'Could not recognize the media in the provided URL.')
