@@ -36,17 +36,9 @@ def l():
         ban()
     
     elif 'update' in url:
-        ClearCon()
-        print(Fore.GREEN+'please wait updating....')
-        sleep(0.10)
-        ClearCon()
-        try:
-            os.system('cp update.py $HOME')
-            os.system('python update.py')
-            sys.exit()
-        except:
-            print('''somthing went wrong please update manualy at
-             : https://github.com/imraj569/InstaLoader.git ''')
+        print(Fore.GREEN+'working on this function please update manualy by past this link')
+        print('> git clone https://github.com/imraj569/InstaLoader.git or just run iupdate.sh file')
+        
 
     elif 'help' in url or '-h' in url:
         ClearCon()
