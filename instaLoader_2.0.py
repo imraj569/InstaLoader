@@ -36,9 +36,10 @@ def l():
         ban()
     
     elif 'update' in url:
+        os.system('mv iupdate.sh $HOME')
         print(Fore.GREEN+'working on this function please update manualy by past this link')
         print('> git clone https://github.com/imraj569/InstaLoader.git or just run iupdate.sh file')
-        
+
 
     elif 'help' in url or '-h' in url:
         ClearCon()
