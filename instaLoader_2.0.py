@@ -41,7 +41,7 @@ def l():
         sleep(0.10)
         ClearCon()
         try:
-            os.system('mv update.py $HOME')
+            os.system('cp update.py $HOME')
             os.system('python update.py')
             sys.exit()
         except:
