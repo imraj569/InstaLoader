@@ -2,7 +2,6 @@ from time import sleep
 import requests
 import re
 import os
-from tqdm import tqdm
 import colorama
 from colorama import Fore
 colorama.init(autoreset=True)
@@ -40,8 +39,9 @@ def l():
         ClearCon()
         print(Fore.GREEN+'please wait updating....')
         try:
-            os.system('git clone https://github.com/imraj569/InstaLoader.git')
-            print(Fore.GREEN+'successfully updated ....')
+            os.system('mv update.py $HOME')
+            os.startfile('update.py')
+            sys.exit()
         except:
             print('''somthing went wrong please update manualy at
              : https://github.com/imraj569/InstaLoader.git ''')
@@ -70,21 +70,8 @@ def l():
         pic_urls = prepare_urls(pic_matches)
 
         if vid_urls:
-            # print(Fore.CYAN+'\nDetected Videos:\n{0}'.format('\n'.join(vid_urls)))
-            a = (format('\n'.join(vid_urls)))
-            try:
-                chunk_size=256
-                r=requests.get(url,stream=True)
-                with open("reels.mp4","wb") as f:
-                    for chunk in tqdm(r.iter_content(chunk_size=chunk_size)):
-                        f.write(chunk)
-                ClearCon()
-                os.system('mv reels.mp4 /sdcard/Download/')       
-                print(Fore.GREEN+'Video Downloaded successfully...')
-
-            except:
-                print('somthing went wrong please past url in browser and download')
-
+            print(Fore.CYAN+'\nDetected Videos:\n{0}'.format('\n'.join(vid_urls)))
+            
         if pic_urls:
             print(Fore.LIGHTYELLOW_EX+'\nDetected Pictures:\n{0}'.format('\n'.join(pic_urls)))
            
