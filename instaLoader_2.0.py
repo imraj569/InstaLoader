@@ -38,9 +38,11 @@ def l():
     elif 'update' in url:
         ClearCon()
         print(Fore.GREEN+'please wait updating....')
+        sleep(0.10)
+        ClearCon()
         try:
             os.system('mv update.py $HOME')
-            os.startfile('update.py')
+            os.system('python update.py')
             sys.exit()
         except:
             print('''somthing went wrong please update manualy at
